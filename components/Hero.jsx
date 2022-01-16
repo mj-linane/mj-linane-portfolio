@@ -1,62 +1,50 @@
 import React from "react";
-import {RoughNotationGroup} from "react-rough-notation";
-import RainbowHighlight from "./RainbowHighlight";
 import userData from "@constants/data";
 import Image from "next/image"
+import {RoughNotationGroup} from "react-rough-notation";
+import RainbowHighlight from "@components/RainbowHighlight";
 
 export default function Hero() {
-    const colors = ["#F59E08", "#84CC16", "#10B981", "#3B82F6"]
 
     return (
-        <div className="flex-row justify-center items-start overflow-hidden">
-            {/*Text container*/}
-
+        <section className="flex flex-row justify-center items-center">
+            {/*Hero Text Container*/}
             <div
-                className="w-full md:w-1/2 mx-auto text-center md:text-left lg:p20">
-                <RoughNotationGroup show={true}>
-                    <RainbowHighlight color={colors[0]}>
-                        <h1 className="text-4xl md:text-8xl font-bold text-gray-700 dark:text-gray-200 my-2">
-                            Web Developer.
-                        </h1>
-                    </RainbowHighlight>
-                    <RainbowHighlight color={colors[1]}>
-                        <h1 className="text-4xl md:text-8xl font-bold text-gray-700 dark:text-gray-200 my-2">
-                            Writer.
-                        </h1>
-                    </RainbowHighlight>
-                    <RainbowHighlight color={colors[2]}>
-                        <h1 className="text-4xl md:text-8xl font-bold text-gray-700 dark:text-gray-200 my-2">
-                            Computer Science Teacher.
-                        </h1>
-                    </RainbowHighlight>
-                </RoughNotationGroup>
-            </div>
-            {/*Image container*/}
-            <div
-                className="hidden lg:block relative w-full md:w-1/2 -mr-40 mt-20">
-                <div className="w-3/4r">
-                    <Image src={userData.avatarUrl}
-                           alt="Avatar"
-                           layout = "fill"
-                           className="shadow">
-                    </Image>
-                    <div className="flex flex-row space-x-4">
-                        <svg
-                            xmlns="http://www.w3.org/2000/svg"
-                            width="16"
-                            height="16"
-                            fill="currentColor"
-                            className="bi bi-arrow-90deg-up"
-                            viewBox="0 0 16 16"
-                        >
-                            <path
-                                fillRule="evenodd"
-                                d="M4.854 1.146a.5.5 0 0 0-.708 0l-4 4a.5.5 0 1 0 .708.708L4 2.707V12.5A2.5 2.5 0 0 0 6.5 15h8a.5.5 0 0 0 0-1h-8A1.5 1.5 0 0 1 5 12.5V2.707l3.146 3.147a.5.5 0 1 0 .708-.708l-4-4z"
-                            />
-                        </svg>
-                    </div>
+                className="flex flex-col justify-center items-center">
+                <div
+                    className="lg:w-1/2"
+                >
+                    <RoughNotationGroup show={true}>
+                        <RainbowHighlight color={"#a855f7"}>
+                            <h1 className="font-typewriter tracking-wider text-8xl md:text-6xl text-center font-bold my-10 uppercase">
+                                hi, my name is MJ.
+                            </h1>
+                        </RainbowHighlight>
+                    </RoughNotationGroup>
+                </div>
+                <div
+                    className="w-3/4"
+                >
+                    <h1 className="font-typewriter tracking-wider text-center text-center text-4xl md:text-4xl font-bold mt-20 mb-40">
+                        I am a front-end developer that builds effective digital
+                        learning experiences and products.
+                    </h1>
                 </div>
             </div>
-        </div>
+
+            {/*// TODO: fix this image*/}
+            {/*Hero Image container*/}
+            {/*<div*/}
+            {/*    className="relative w-full mt-20 mx-auto">*/}
+            {/*    /!*className="relative md:hidden w-full md:w-1/2 -mr-40 mt-20">*!/*/}
+            {/*        <Image src={userData.avatarUrl}*/}
+            {/*               alt="Avatar"*/}
+            {/*               layout="fill"*/}
+            {/*               // height="100"*/}
+            {/*               // width="100"*/}
+            {/*               className="box-shadow-lg"*/}
+            {/*        />*/}
+            {/*</div>*/}
+        </section>
     )
 }

@@ -44,9 +44,9 @@ export default function ContainerBlock({children, ...customMeta}) {
                           content={meta.date}/>
                 )}
             </Head>
-            <main className="dark:bg-gray-800 w-full">
+            <main className="bg-neutral-50 dark:bg-neutral-800 text-neutral-800 dark:text-neutral-50 w-full">
                 <NavBar/>
-                <div>{children}</div>
+                {children}
                 <Footer/>
             </main>
         </div>

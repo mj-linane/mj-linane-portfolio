@@ -1,7 +1,19 @@
-/* ./styles/globals.css */
+@import 'fonts.css';
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer utilities {
+  .box-shadow-black {
+    box-shadow: 0.125rem 0.125rem 0 0 #000;
+  }
+
+  .box-shadow-md-black{
+    box-shadow: 1rem 1rem 0 0 #000;
+  }
+}
+
 
 html,
 body {
