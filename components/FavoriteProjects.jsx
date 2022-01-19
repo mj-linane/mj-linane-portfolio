@@ -1,7 +1,16 @@
 import Link from 'next/link';
 import Image from 'next/image';
+import userData from "@constants/data"
 
 export default function FavoriteProjects() {
+    // Generate a list of favorite projects
+    const favoriteProjects = []
+    userData.projects.forEach(project => {
+        if (project.favorite) {
+            favoriteProjects.push(project)
+        }
+    })
+
     return (
         <section className="bg-neutral-200 dark:bg-neutral-900">
             <div className="max-w-6xl mx-auto">
@@ -18,28 +27,41 @@ export default function FavoriteProjects() {
                     </Link>
                 </header>
                 {/*grid starts here*/}
-                <div className="grid md:grid-cols-3 gap-8 lg:-mt-8 pb-40">
-                    {/*single card*/}
-                    <a href="https://mycodingclass.co"
-                       className="w-full block col-span-3 border-2 border-black box-shadow-md-black">
-                        <div className="relative overflow-hidden">
-                            <Image
-                                src="/mj-profile.jpg"
-                                alt="mycodingclass.co"
-                                layout="fill"
-                                objectFit="cover"
-                            />
-                            <h1 className="absolute top-10 left-10 text-neutral-50 font-bold text-xl bg-purple-500 rounded-md px-2">
-                                My Coding Class
-                            </h1>
-                            <h1 className="absolute bottom-10 left-10 dark:text-neutral-800 font-bold text-xl">
-                                01
-                            </h1>
-                        </div>
-                    </a>
-                    {/*TODO: Add additional favorite project cards*/}
+                <div className="grid md:grid-cols-3 gap-8 lg:-mt-8 py-40">
+                    {favoriteProjects.map((project, index)=>
+                        <FavoriteProjectCard
+                            title={project.title}
+                            link={project.link}
+                            imgUrl={project.imgUrl}
+                            altText={project.title}
+                            number={index + 1}
+                            key={`${index + 1}`}
+                        />
+                    )}
                 </div>
             </div>
         </section>
+    )
+}
+
+const FavoriteProjectCard= function({imgUrl, altText, title, link, number}) {
+    return (
+        <a href={link}
+              className="w-full block col-span-3 border-2 border-black box-shadow-md-black">
+        <div className="relative overflow-hidden h-80">
+            <Image
+                src={imgUrl}
+                alt={altText}
+                layout="fill"
+                objectFit="cover"
+            />
+            <h1 className="absolute top-10 left-10 text-neutral-50 font-bold font-typewriter text-xl bg-purple-500 rounded-md px-2">
+                {title}
+            </h1>
+            <h1 className="absolute bottom-10 left-10 dark:text-neutral-800 font-bold font-typewriter text-xl">
+                {number}
+            </h1>
+        </div>
+    </a>
     )
 }
