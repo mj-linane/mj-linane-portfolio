@@ -40,16 +40,15 @@ export default function Projects() {
 const ProjectCard = ({title, link, imgUrl, number}) => {
     return (
         <a href={link} className="bg-neutral-50 w-full block border-2 border-black box-shadow-md-black">
-            <div className="relative overflow-hidden">
-                <div className="h-72 object-cover">
+            <div className="relative h-80 overflow-hidden">
                     <Image
                         src={imgUrl}
                         alt="portfolio item"
                         layout="fill"
+                        objectFit="cover"
                         quality={100}
                     >
                     </Image>
-                </div>
                 <h1 className="absolute top-10 left-10 font-bold text-xl font-typewriter bg-purple-500 px-2">
                     {title}
                 </h1>
