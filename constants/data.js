@@ -9,12 +9,12 @@ const userData = {
     {
       title: "Portfolio",
       link: "https://mjlinane.com",
-      imgUrl: "/mj-profile.png",
+      imgUrl: "/mj-portrait.jpg",
     },
     {
-      title: "Real Time Chat App",
+      title: "Real Time Chat Website",
       link: "https://github.com/mj-linane/real-time-chat-website",
-      imgUrl: "/real-time-chat.png",
+      imgUrl: "/chat-app-repository-image.jpg",
     }
   ],
   about: {
