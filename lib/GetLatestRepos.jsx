@@ -6,8 +6,7 @@ const getLatestRepos = async (data) => {
     try {
         userName = data.githubUsername
 
-        const res = await axios.get(`https://api.github.com/search/repositories?q=user:${userName}+sort:author-date-asc`)
-
+        const res = await axios.get(`https://api.github.com/search/repositories?q=user:${userName}+sort:updated`)
         repos = res.data.items;
 
         } catch (err) {
