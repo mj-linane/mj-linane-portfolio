@@ -16,7 +16,7 @@ export default function Hero() {
                 >
                     <RoughNotationGroup show={true}>
                         <RainbowHighlight color={"#a855f7"}>
-                            <h1 className="font-typewriter tracking-wider text-8xl md:text-6xl text-center font-bold my-10 uppercase">
+                            <h1 className="font-typewriter tracking-wider text-8xl md:text-6xl text-center font-bold my-10 uppercase py-7 px-4">
                                 hi, my name is MJ.
                             </h1>
                         </RainbowHighlight>
