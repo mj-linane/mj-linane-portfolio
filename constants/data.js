@@ -10,13 +10,22 @@ const userData = {
       title: "Portfolio",
       link: "https://mjlinane.com",
       imgUrl: "/mj-portrait.jpg",
-      favorite: true
+      favorite: false
     },
     {
       title: "Real Time Chat Website",
       link: "https://github.com/mj-linane/real-time-chat-website",
       imgUrl: "/chat-app-repository-image.jpg",
       favorite: true
+    },
+    {
+      title: "Text Case Converter",
+      link: "https://mj-linane.github.io/case-converter/",
+      imgUrl: "/case-converter-screenshot.jpg",
+      favorite: true
+    },
+    {
+      title: ""
     }
   ],
   about: {
