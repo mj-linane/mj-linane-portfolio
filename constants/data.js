@@ -9,7 +9,7 @@ const userData = {
     {
       title: "Portfolio",
       link: "https://mjlinane.com",
-      imgUrl: "/mj-portrait.jpg",
+      imgUrl: "/mj-linane-portfolio-screenshot.jpeg",
       favorite: false
     },
     {
