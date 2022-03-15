@@ -25,7 +25,10 @@ const userData = {
       favorite: true
     },
     {
-      title: ""
+      title: "Math Wars",
+      link: "https://math-wars.vercel.app/",
+      imgUrl: "/math-wars-screenshot.jpeg",
+      favorite: true
     }
   ],
   about: {
