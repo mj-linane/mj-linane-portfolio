@@ -1,5 +1,4 @@
 import React from "react"
-import Image from 'next/image'
 import {RoughNotationGroup} from "react-rough-notation";
 import RainbowHighlight from "@components/RainbowHighlight";
 import userData from "@constants/data";
@@ -138,21 +137,6 @@ export default function About() {
                         <h1 className="font-typewriter tracking-wider bg-purple-500 border-2 border-black box-shadow-black text-3xl px-2 py-1 inline-block font-bold text-neutral-50">
                             my tech stack
                         </h1>
-                        <div className="flex flex-row flex-wrap mt-8">
-                            <div
-                                className="h-20 w-20 mx-4 my-4"
-                            >
-                                <Image
-                                    src="/mj-portrait.jpg"
-                                    alt="javascript image"
-                                    // className="h-20 w-20 mx-4 my-4"
-                                    layout="fill"
-                                    objectFit="cover"
-                                    quality={100}
-                                />
-                            </div>
-
-                        </div>
                         {/* TODO add additional tech stack images*/}
                     </div>
                 </div>
