@@ -1,6 +1,7 @@
 import React from "react"
 import RainbowHighlight from "@components/RainbowHighlight";
 import {RoughNotationGroup} from "react-rough-notation";
+import ContactForm from "@components/Contact-Form.jsx";
 
 export default function Contact() {
     return (
@@ -31,48 +32,7 @@ export default function Contact() {
                         </div>
                         <div
                             className="flex flex-row items-center space-x-6 border-4 border-black py-4 px-8">
-                            {/*className="flex flex-row items-center space-x-6 rounded-md border border-[#02044A] hover:border hover:border-purple-500 py-4 px-8">*/}
-                            <form className="form p-4 flex flex-col w-full">
-                                {/*<form className="form rounded-lg p-4 flex flex-col w-full">*/}
-                                <label htmlFor="name"
-                                       className="form-label text-sm text-neutral-800 uppercase mx-4 track-wide">
-                                    Your Name
-                                </label>
-                                <input
-                                    type="text"
-                                    className="form-input border-2 border-black box-shadow-black dark:bg-neutral-50 py-2 mt-2 px-1 mx-4"
-                                    // className="rounded-md border focus:outline-none py-2 mt-2 px-1 mx-4 focus:ring-2 focus:border-none ring-purple-500"
-                                    name="name"
-                                    id="name"
-                                />
-                                <label htmlFor="email"
-                                       className="form-label text-sm text-neutral-800 uppercase mx-4 mt-4 track-wide">
-                                    Your Email
-                                </label>
-                                <input
-                                    type="email"
-                                    className="form-input border-2 border-black box-shadow-black dark:bg-neutral-50 py-2 mt-2 px-1 mx-4 "
-                                    // className="rounded-md border focus:outline-none py-2 mt-2 px-1 mx-4 focus:ring-2 focus:border-none ring-purple-500"
-                                    name="email"
-                                    id="email"
-                                />
-                                <label htmlFor="comment"
-                                       className="form-label text-sm text-neutral-800 uppercase mx-4 mt-4 track-wide">
-                                    Your Message
-                                </label>
-                                <input
-                                    type="textarea"
-                                    className="form-textarea border-2 border-black box-shadow-black dark:bg-neutral-50 py-2 mt-2 px-1 mx-4"
-                                    name="comment"
-                                />
-                                <button
-                                    type="submit"
-                                    className="text-sm border-2 border-black bg-purple-500 hover:bg-black text-neutral-50 cursor-pointer h-10 uppercase mx-4 mt-8 py-2 tracking-wider"
-                                    // className="bg-purple-500 rounded-md w-1/2 mx-4 mt-8 py-2 text-gray-50 text-sm font-bold"
-                                >
-                                    Send Message
-                                </button>
-                            </form>
+                            <ContactForm/>
                         </div>
                     </div>
                 </div>
