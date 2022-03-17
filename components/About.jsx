@@ -80,48 +80,6 @@ export default function About() {
                                 what you are working on.
                             </p>
                         </div>
-                        {/*social links*/}
-                        {/*<h1 className="font-typewriter text-xl font-semibold text-neutral-700 mt-8 dark:text-neutral-50">*/}
-                        {/*    Social links*/}
-                        {/*</h1>*/}
-                        {/*<div className="mt-4 ml-4">*/}
-                        {/*    <div*/}
-                        {/*        className="flex flex-row justify-start items-center">*/}
-                        {/*        <a href={userData.socialLinks.twitter}>*/}
-                        {/*            <div className="my-4">&rarr;</div>*/}
-                        {/*            <p className="text-lg text-neutral-500 relative overflow-hidden dark:text-neutral-50">*/}
-                        {/*                <div*/}
-                        {/*                    className="absolute h-0 w-full bg-neutral-400 bottom-0 transform -translate-x-24 group-hover:translate-x-0 transition duration-300">*/}
-                        {/*                    Twitter*/}
-                        {/*                </div>*/}
-                        {/*            </p>*/}
-                        {/*        </a>*/}
-                        {/*    </div>*/}
-                        {/*    <div*/}
-                        {/*        className="flex flex-row justify-start items-center">*/}
-                        {/*        <a href={userData.socialLinks.github}>*/}
-                        {/*            <div className="my-4">&rarr;</div>*/}
-                        {/*            <p className="text-lg-text-neutral-500 font-mono relative overflow-hidden dark:text-neutral-300">*/}
-                        {/*                <div*/}
-                        {/*                    className="absolute h-0 w-full bg-neutral-400 bottom-0 transform -translate-x-24 group-hover:translate-x-0 transition duration-300">*/}
-                        {/*                    GitHub*/}
-                        {/*                </div>*/}
-                        {/*            </p>*/}
-                        {/*        </a>*/}
-                        {/*    </div>*/}
-                        {/*    <div*/}
-                        {/*        className="flex flex-row justify-start items-center">*/}
-                        {/*        <a href={userData.socialLinks.linkedin}>*/}
-                        {/*            <div className="my-4">&rarr;</div>*/}
-                        {/*            <p className="text-lg-text-neutral-500 relative overflow-hidden dark:text-neutral-300">*/}
-                        {/*                <div*/}
-                        {/*                    className="absolute h-0 w-full bg-neutral-400 bottom-0 transform -translate-x-24 group-hover:translate-x-0 transition duration-300">*/}
-                        {/*                    LinkedIn*/}
-                        {/*                </div>*/}
-                        {/*            </p>*/}
-                        {/*        </a>*/}
-                        {/*    </div>*/}
-                        {/*</div>*/}
                     </div>
                     {/*text area*/}
                     <div className="col-span-1 md:col-span-2">
