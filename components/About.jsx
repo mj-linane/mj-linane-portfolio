@@ -1,10 +1,9 @@
 import React from "react"
-import Image from 'next/image'
+import Image from "next/image"
 import {RoughNotationGroup} from "react-rough-notation";
 import RainbowHighlight from "@components/RainbowHighlight";
 import userData from "@constants/data";
 
-// TODO Build About Section
 export default function About() {
     return (
         <section className="bg-neutral-50 dark:bg-neutral-800">
@@ -18,11 +17,6 @@ export default function About() {
                     </RainbowHighlight>
                 </RoughNotationGroup>
             </div>
-            {/*<div className="max-w-6xl mx-auto h-48 bg-neutral-50 dark:bg-neutral-800">*/}
-            {/*    <h1 className="text-5xl md:text-9xl font-bold py-20 text-center md:text-left">*/}
-            {/*        about me.*/}
-            {/*    </h1>*/}
-            {/*</div>*/}
             <div className="bg-neutral-200 mt-10 pt-20 dark:bg-neutral-900">
                 <div className="text-container max-w-6xl mx-auto py-20">
                     <p
@@ -41,9 +35,8 @@ export default function About() {
             </div>
             <div className="bg-neutral-200 dark:bg-neutral-900 px-4 pb-20">
                 <div
-                    className="pt-20 grid grid-cols-1 md:grid-cols-3 mx-w-6xl mx-auto gap-y-20 gap-x-20">
-                    {/*social buttons*/}
-                    <div className="inline-flex flex-col">
+                    className="grid grid-cols-1 md:grid-cols-2 mx-w-6xl mx-auto gap-y-20 gap-x-auto pt-20 px-5">
+                    <div className="inline-flex flex-col md:pr-10">
                         <div>
                             <h1 className="font-typewriter text-xl font-semibold text-neutral-700 dark:text-neutral-200">
                                 Contact
@@ -81,51 +74,9 @@ export default function About() {
                                 what you are working on.
                             </p>
                         </div>
-                        {/*social links*/}
-                        {/*<h1 className="font-typewriter text-xl font-semibold text-neutral-700 mt-8 dark:text-neutral-50">*/}
-                        {/*    Social links*/}
-                        {/*</h1>*/}
-                        {/*<div className="mt-4 ml-4">*/}
-                        {/*    <div*/}
-                        {/*        className="flex flex-row justify-start items-center">*/}
-                        {/*        <a href={userData.socialLinks.twitter}>*/}
-                        {/*            <div className="my-4">&rarr;</div>*/}
-                        {/*            <p className="text-lg text-neutral-500 relative overflow-hidden dark:text-neutral-50">*/}
-                        {/*                <div*/}
-                        {/*                    className="absolute h-0 w-full bg-neutral-400 bottom-0 transform -translate-x-24 group-hover:translate-x-0 transition duration-300">*/}
-                        {/*                    Twitter*/}
-                        {/*                </div>*/}
-                        {/*            </p>*/}
-                        {/*        </a>*/}
-                        {/*    </div>*/}
-                        {/*    <div*/}
-                        {/*        className="flex flex-row justify-start items-center">*/}
-                        {/*        <a href={userData.socialLinks.github}>*/}
-                        {/*            <div className="my-4">&rarr;</div>*/}
-                        {/*            <p className="text-lg-text-neutral-500 font-mono relative overflow-hidden dark:text-neutral-300">*/}
-                        {/*                <div*/}
-                        {/*                    className="absolute h-0 w-full bg-neutral-400 bottom-0 transform -translate-x-24 group-hover:translate-x-0 transition duration-300">*/}
-                        {/*                    GitHub*/}
-                        {/*                </div>*/}
-                        {/*            </p>*/}
-                        {/*        </a>*/}
-                        {/*    </div>*/}
-                        {/*    <div*/}
-                        {/*        className="flex flex-row justify-start items-center">*/}
-                        {/*        <a href={userData.socialLinks.linkedin}>*/}
-                        {/*            <div className="my-4">&rarr;</div>*/}
-                        {/*            <p className="text-lg-text-neutral-500 relative overflow-hidden dark:text-neutral-300">*/}
-                        {/*                <div*/}
-                        {/*                    className="absolute h-0 w-full bg-neutral-400 bottom-0 transform -translate-x-24 group-hover:translate-x-0 transition duration-300">*/}
-                        {/*                    LinkedIn*/}
-                        {/*                </div>*/}
-                        {/*            </p>*/}
-                        {/*        </a>*/}
-                        {/*    </div>*/}
-                        {/*</div>*/}
                     </div>
                     {/*text area*/}
-                    <div className="col-span-1 md:col-span-2">
+                    <div className="col-span-2 md:col-span-1">
                         {userData.about.description?.map((description, index) => (
                             <p
                                 key={index}
@@ -134,26 +85,22 @@ export default function About() {
                                 {description}
                             </p>
                         ))}
-
                         <h1 className="font-typewriter tracking-wider bg-purple-500 border-2 border-black box-shadow-black text-3xl px-2 py-1 inline-block font-bold text-neutral-50">
                             my tech stack
                         </h1>
-                        <div className="flex flex-row flex-wrap mt-8">
-                            <div
-                                className="h-20 w-20 mx-4 my-4"
-                            >
-                                <Image
-                                    src="/mj-portrait.jpg"
-                                    alt="javascript image"
-                                    // className="h-20 w-20 mx-4 my-4"
-                                    layout="fill"
-                                    objectFit="cover"
-                                    quality={100}
-                                />
-                            </div>
-
+                        <div className="border-4 border-black bg-neutral-50 box-shadow-md-black grid grid-cols-3 gap-y-4 place-items-center my-5 py-5">
+                            {userData.about.techStack?.map((tech, index) => (
+                                <div key={index} className="col-span-1">
+                                    <Image
+                                        src={tech.image}
+                                        alt={tech.name}
+                                        height={200}
+                                        width={200}
+                                        objectFit="contain"
+                                    />
+                                </div>
+                            ))}
                         </div>
-                        {/* TODO add additional tech stack images*/}
                     </div>
                 </div>
             </div>
