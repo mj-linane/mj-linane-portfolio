@@ -20,16 +20,28 @@ const userData = {
         },
         {
             title: "Text Case Converter",
-            link: "https://mj-linane.github.io/case-converter/",
+            link: "https://github.com/mj-linane/case-converter",
             imgUrl: "/case-converter-screenshot.jpg",
             favorite: true
         },
         {
             title: "Math Wars",
-            link: "https://math-wars.vercel.app/",
+            link: "https://github.com/mj-linane/math-wars",
             imgUrl: "/math-wars-screenshot.jpeg",
             favorite: true
-        }
+        },
+        {
+            title: "My Coding Class",
+            link: "https://mycodingclass.co",
+            imgUrl: "/my-coding-class-screenshot.jpeg",
+            favorite: false
+        },
+        {
+            title: "Guildway",
+            link: "https://guildway.com",
+            imgUrl: "/guildway-screenshot.jpeg",
+            favorite: false
+        },
     ],
     about: {
         title:
