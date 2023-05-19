@@ -19,9 +19,9 @@ export default function FavoriteProjects() {
             favorite projects
           </h1>
           <Link href='/projects'>
-            <a className='mb-20 md:mb-0 px-8 py-4 border-2 border-black bg-purple-500 cursor-pointer uppercase font-typewriter tracking-wider font-semibold space-x-4 dark:text-neutral-50'>
+            <div className='mb-20 md:mb-0 px-8 py-4 border-2 border-black bg-purple-500 cursor-pointer uppercase font-typewriter tracking-wider font-semibold space-x-4 dark:text-neutral-50'>
               <p>View all</p>
-            </a>
+            </div>
           </Link>
         </header>
         {/*grid starts here*/}
