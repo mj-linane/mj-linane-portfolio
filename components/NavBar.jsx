@@ -19,24 +19,23 @@ export default function NavBar() {
         <div className="max-w-6xl mx-auto px-4 py-10 md:py-20">
             <div className="flex md:flex-row justify-between items-center">
                 {/* Logo / Home / Text */}
-
-                <div className="flex flex-col">
+                <div className="flex md:flex-row">
                     <Link href="/">
-                        <a>
+                        <div>
                             <h1 className="font-semibold text-xl dark:text-neutral-100">
                                 {userData.name}
                             </h1>
                             <p className="text-base font-light text-neutral-500 dark:text-neutral-300">
                                 {userData.designation}
                             </p>
-                        </a>
+                        </div>
                     </Link>
                 </div>
 
                 {/*menu*/}
-                <div className="space-x-8 hidden md:block font-typewriter">
+                <div className="space-x-8 hidden md:flex font-typewriter">
                     <Link href="/about">
-                        <a
+                        <div
                             className={`text-base ${
                                 router.asPath === "/about"
                                     ? "text-neutral-800 font-bold" +
@@ -61,10 +60,10 @@ export default function NavBar() {
                                     />
                                 </svg>
                             )}
-                        </a>
+                        </div>
                     </Link>
                     <Link href="/projects">
-                        <a
+                        <div
                             className={`text-base  ${
                                 router.asPath === "/projects"
                                     ? "text-neutral-800 font-bold" +
@@ -89,10 +88,10 @@ export default function NavBar() {
                                     />
                                 </svg>
                             )}
-                        </a>
+                        </div>
                     </Link>
                     <Link href="/experience">
-                        <a
+                        <div
                             className={`text-base  ${
                                 router.asPath === "/experience"
                                     ? "text-neutral-800 font-bold" +
@@ -117,10 +116,10 @@ export default function NavBar() {
                                     />
                                 </svg>
                             )}
-                        </a>
+                        </div>
                     </Link>
                     <Link href="/contact">
-                        <a
+                        <div
                             className={`text-base  ${
                                 router.asPath === "/contact"
                                     ? "text-neutral-800 font-bold" +
@@ -145,7 +144,7 @@ export default function NavBar() {
                                     />
                                 </svg>
                             )}
-                        </a>
+                        </div>
                     </Link>
                 </div>
 
@@ -235,24 +234,24 @@ export default function NavBar() {
             </div>
             <div className="space-x-8 block md:hidden mt-4">
                 <Link href="/about">
-                    <a className="text-base font-normal text-neutral-600 dark:text-neutral-300">
+                    <div className="text-base font-normal text-neutral-600 dark:text-neutral-300">
                         About
-                    </a>
+                    </div>
                 </Link>
                 <Link href="/projects">
-                    <a className="text-base font-normal text-neutral-600 dark:text-neutral-300">
+                    <div className="text-base font-normal text-neutral-600 dark:text-neutral-300">
                         Projects
-                    </a>
+                    </div>
                 </Link>
                 <Link href="/experience">
-                    <a className="text-base font-normal text-neutral-600 dark:text-neutral-300">
+                    <div className="text-base font-normal text-neutral-600 dark:text-neutral-300">
                         Experience
-                    </a>
+                    </div>
                 </Link>
                 <Link href="/contact">
-                    <a className="text-base font-normal text-neutral-600 dark:text-neutral-300">
+                    <div className="text-base font-normal text-neutral-600 dark:text-neutral-300">
                         Contact
-                    </a>
+                    </div>
                 </Link>
             </div>
         </div>
