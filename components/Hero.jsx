@@ -25,7 +25,7 @@ export default function Hero() {
                 <div
                     className="w-3/4"
                 >
-                    <h1 className="font-typewriter tracking-wider text-center text-center text-4xl md:text-4xl font-bold mt-20 mb-40">
+                    <h1 className="font-typewriter tracking-wider text-center text-4xl md:text-4xl font-bold mt-20 mb-40">
                         I am a front-end developer that builds effective digital
                         learning experiences and products.
                     </h1>
