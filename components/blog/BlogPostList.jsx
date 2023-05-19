@@ -1,4 +1,5 @@
 import React from "react";
+import BlogPostLink from "@components/blog/BlogPostLink"
 
 export default function BlogPostList({ posts }) {
   return (
@@ -7,8 +8,7 @@ export default function BlogPostList({ posts }) {
         <ul>
           {posts.map(({ id, date, title }) => (
             <li key={id} className='my-4'>
-              <h2 className='text-3xl font-bold'>{title}</h2>
-              <p className='text-gray-500'>{date}</p>
+             <BlogPostLink date={date} title={title} />
             </li>
           ))}
         </ul>
