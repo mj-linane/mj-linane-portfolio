@@ -4,7 +4,7 @@ import NavBar from './NavBar.jsx'
 import Footer from './Footer.jsx'
 
 export default function ContainerBlock({children, ...customMeta}) {
-    const router = useRouter()
+    const router = useRouter();
 
     const meta = {
         title: "MJ Linane - Developer, Designer, Teacher",
@@ -13,7 +13,7 @@ export default function ContainerBlock({children, ...customMeta}) {
         image: "/avatar.png",
         type: "website",
         ...customMeta
-    }
+    };
 
     return (
         <div>
