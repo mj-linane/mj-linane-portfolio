@@ -55,6 +55,7 @@ const FavoriteProjectCard = function ({
       className='w-full block col-span-3 border-2 border-black box-shadow-md-black'
     >
       <div className='relative overflow-hidden h-80'>
+        {/* Next image component */}
         <Image src={imgUrl} alt={altText} layout='fill' objectFit='cover' />
         <h1 className='absolute top-10 left-10 text-neutral-50 font-bold font-typewriter text-xl bg-purple-500 rounded-md px-2'>
           {title}
