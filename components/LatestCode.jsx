@@ -1,34 +1,36 @@
-import React, { useEffect, useState } from "react";
-import getLatestRepos from "@lib/GetLatestRepos.jsx";
-import userData from "@constants/data.js";
+import React, { useEffect, useState } from 'react'
+import getLatestRepos from '@lib/GetLatestRepos.js'
+// import { getLatestRepos } from "@lib/api"
+import userData from '@constants/data'
+import LatestCodeCard from '@components/LatestCodeCard'
 
 export default function LatestCode({ repositories }) {
-  const [repos, setRepos] = useState([]);
+  const [repos, setRepos] = useState([])
 
   useEffect(() => {
     async function asyncGetRepos() {
       try {
-        await getLatestRepos(userData);
-        setRepos(repositories);
+        await getLatestRepos(userData)
+        setRepos(repositories)
       } catch (error) {
-        console.log(error);
+        console.log(error)
       }
     }
 
-    asyncGetRepos();
-  }, [repositories]);
+    asyncGetRepos()
+  }, [repositories])
 
   return (
-    <section className='bg-neutral-200 -mt-40 dark:bg-neutral-900 pb-40'>
-      <div className='max-w-6xl mx-auto'>
-        <div className='flex flex-col md:flex-row justify-between items-center md:pt-40 mx-10'>
-          <h1 className='text-6xl lg:text-9xl max-w-lg font-typewriter tracking-wider font-bold text-neutral-300 my-20 md:my-0 dark:text-neutral-500 text-center lg:text-left'>
+    <section className="bg-neutral-200 -mt-40 dark:bg-neutral-900 pb-40">
+      <div className="max-w-6xl mx-auto">
+        <div className="flex flex-col md:flex-row justify-between items-center md:pt-40 mx-10">
+          <h1 className="text-6xl lg:text-9xl max-w-lg font-typewriter tracking-wider font-bold text-neutral-300 my-20 md:my-0 dark:text-neutral-500 text-center lg:text-left">
             recent projects
           </h1>
 
           <a
             href={`https://github.com/${userData.githubUsername}`}
-            className='mb-20 md:mb-0 px-8 py-4 border-2 border-black bg-purple-500 cursor-pointer uppercase font-typewriter tracking-wider font-semibold space-x-4 text-center dark:text-neutral-50'
+            className="mb-20 md:mb-0 px-8 py-4 border-2 border-black bg-purple-500 cursor-pointer uppercase font-typewriter tracking-wider font-semibold space-x-4 text-center dark:text-neutral-50"
           >
             {/*<svg*/}
             {/*    xmlns="http://www.w3.org/2000/svg"*/}
@@ -50,36 +52,14 @@ export default function LatestCode({ repositories }) {
         </div>
       </div>
 
-      <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto px-10 lg:-mt-10 gap-y-20'>
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto px-10 lg:-mt-10 gap-y-20">
         {/* Single github Repo */}
 
         {repos &&
           repos.map((latestRepo, index) => (
-            <GithubRepoCard latestRepo={latestRepo} key={index} />
+            <LatestCodeCard latestRepo={latestRepo} key={index} />
           ))}
       </div>
     </section>
-  );
+  )
 }
-
-const GithubRepoCard = ({ latestRepo }) => {
-  // noinspection JSUnresolvedVariable
-  return (
-    <div className='github-repo'>
-      <h1 className='font-semibold text-xl dark:text-neutral-200 text-neutral-800'>
-        {latestRepo.name}
-      </h1>
-      <p className='text-base font-normal my-4 text-neutral-500'>
-        {latestRepo.description}
-      </p>
-      <div className='border-2 border-black bg-purple-500 hover:bg-black cursor-pointer h-10 w-fit px-4 mt-8 py-2'>
-        <a
-          href={latestRepo.clone_url}
-          className='font-typewriter uppercase text-neutral-900 dark:text-neutral-50 tracking-wider'
-        >
-          <p>View Repository </p>
-        </a>
-      </div>
-    </div>
-  );
-};
