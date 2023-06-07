@@ -1,12 +1,12 @@
-import React, { useEffect, useState } from 'react'
+import Link from 'next/link'
 import { useRouter } from 'next/router'
 import { useTheme } from 'next-themes'
-import Link from 'next/link'
+import React, { useEffect, useState } from 'react'
+
 import userData from '@constants/data'
 
 export default function NavBar() {
   const router = useRouter()
-  console.log(router.asPath)
   const { theme, setTheme } = useTheme()
   const [mounted, setMounted] = useState(false)
 
