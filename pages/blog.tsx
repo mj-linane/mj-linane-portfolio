@@ -1,11 +1,12 @@
+import Head from 'next/head'
+
 import Container from '@components/Container'
-import MoreStories from '@components/MoreStories'
 import HeroPost from '@components/HeroPost'
 import Intro from '@components/Intro'
 import Layout from '@components/Layout'
-import { getAllPosts } from '@lib/api'
-import Head from 'next/head'
+import MoreStories from '@components/MoreStories'
 import Post from '@interfaces/post'
+import { getAllPosts } from '@lib/api'
 
 type Props = {
   allPosts: Post[]
