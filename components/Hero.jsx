@@ -1,4 +1,5 @@
 import { RoughNotationGroup } from 'react-rough-notation'
+
 import RainbowHighlight from '@components/RainbowHighlight'
 
 export default function Hero() {
