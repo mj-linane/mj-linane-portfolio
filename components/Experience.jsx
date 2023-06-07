@@ -1,7 +1,9 @@
-import userData from "@constants/data";
 import { RoughNotationGroup } from "react-rough-notation";
-import RainbowHighlight from "./RainbowHighlight";
+
+import userData from "@constants/data";
+
 import ExperienceCard from "./ExperienceCard";
+import RainbowHighlight from "./RainbowHighlight";
 
 export default function Experience() {
   return (
