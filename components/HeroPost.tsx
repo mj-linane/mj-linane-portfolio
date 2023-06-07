@@ -1,8 +1,10 @@
-import Avatar from './Avatar'
-import DateFormatter from './DateFormatter'
-import CoverImage from './CoverImage'
 import Link from 'next/link'
+
 import type Author from '@interfaces/author'
+
+import Avatar from './Avatar'
+import CoverImage from './CoverImage'
+import DateFormatter from './DateFormatter'
 
 type Props = {
   title: string
