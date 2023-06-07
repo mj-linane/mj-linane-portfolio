@@ -1,10 +1,10 @@
 import ContainerBlock from "@components/ContainerBlock";
+import FavoriteProjects from "@components/FavoriteProjects";
 import Hero from "@components/Hero";
 import LatestCode from "@components/LatestCode";
-import FavoriteProjects from "@components/FavoriteProjects";
 // import {getLatestRepos} from "@lib/api";
-import getLatestRepos from '@lib/GetLatestRepos';
 import userData from "@constants/data";
+import getLatestRepos from '@lib/GetLatestRepos';
 
 type Repository = {
     id: string;
