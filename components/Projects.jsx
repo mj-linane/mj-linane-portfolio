@@ -1,8 +1,9 @@
-import React from 'react'
 import Image from 'next/image'
-import userData from '@constants/data'
+import React from 'react'
 import { RoughNotationGroup } from 'react-rough-notation'
+
 import RainbowHighlight from '@components/RainbowHighlight'
+import userData from '@constants/data'
 
 export default function Projects() {
   return (
