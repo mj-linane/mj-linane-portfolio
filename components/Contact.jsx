@@ -1,6 +1,7 @@
-import RainbowHighlight from './RainbowHighlight'
 import { RoughNotationGroup } from 'react-rough-notation'
+
 import ContactForm from './ContactForm'
+import RainbowHighlight from './RainbowHighlight'
 
 export default function Contact() {
   return (
