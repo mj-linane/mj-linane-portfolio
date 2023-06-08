@@ -1,4 +1,4 @@
-import userData from '@constants/data'
+import userData from '@/constants/data'
 
 export default function Footer() {
   return (
