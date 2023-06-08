@@ -2,15 +2,15 @@ import ErrorPage from 'next/error'
 import Head from 'next/head'
 import { useRouter } from 'next/router'
 
-import Container from '@components/Container'
-import Layout from '@components/Layout'
-import PostBody from '@components/PostBody'
-// import Header from '@components/Header'
-import PostHeader from '@components/PostHeader'
-import PostTitle from '@components/PostTitle'
-import PostType from '@interfaces/post'
-import { getPostBySlug, getAllPosts } from '@lib/api'
-import markdownToHtml from "@lib/markdownToHtml";
+import Container from '@/components/Container'
+import Layout from '@/components/Layout'
+import PostBody from '@/components/PostBody'
+import PostHeader from '@/components/PostHeader'
+import PostTitle from '@/components/PostTitle'
+
+import PostType from '@/interfaces/post'
+import { getPostBySlug, getAllPosts } from '@/lib/api'
+import markdownToHtml from '@/lib/markdownToHtml'
 
 type Props = {
   post: PostType
