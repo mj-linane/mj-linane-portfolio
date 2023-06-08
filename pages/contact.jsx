@@ -1,10 +1,10 @@
-import Contact from "@components/Contact";
-import ContainerBlock from "@components/ContainerBlock";
+import Contact from '@/components/Contact'
+import ContainerBlock from '@/components/ContainerBlock'
 
 export default function contact() {
-    return (
-        <ContainerBlock title="Contact - MJ Linane">
-            <Contact/>
-        </ContainerBlock>
-    )
+  return (
+    <ContainerBlock title="Contact - MJ Linane">
+      <Contact />
+    </ContainerBlock>
+  )
 }
