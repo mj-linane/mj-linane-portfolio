@@ -1,12 +1,12 @@
 import React, { useEffect, useState } from 'react'
 
 import LatestCodeCard from '@/components/LatestCodeCard'
-
 import userData from '@/constants/data'
 import getLatestRepos from '@/lib/GetLatestRepos'
 
 export default function LatestCode({ repositories }) {
   const [repos, setRepos] = useState([])
+  const [error, setError] = useState(null)
 
   useEffect(() => {
     async function asyncGetRepos() {
@@ -14,7 +14,7 @@ export default function LatestCode({ repositories }) {
         await getLatestRepos(userData)
         setRepos(repositories)
       } catch (error) {
-        console.log(error)
+        setError('An error occurred while fetching the latest repositories.')
       }
     }
 
@@ -56,6 +56,7 @@ export default function LatestCode({ repositories }) {
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto px-10 lg:-mt-10 gap-y-20">
         {/* Single github Repo */}
 
+        {error && <p>{error}</p>}
         {repos &&
           repos.map((latestRepo, index) => (
             <LatestCodeCard latestRepo={latestRepo} key={index} />
