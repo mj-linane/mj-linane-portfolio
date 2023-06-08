@@ -2,7 +2,6 @@ import Image from 'next/image'
 import { RoughNotationGroup } from 'react-rough-notation'
 
 import RainbowHighlight from '@/components/RainbowHighlight'
-
 import userData from '@/constants/data'
 
 export default function About() {
