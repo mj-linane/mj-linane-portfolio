@@ -1,8 +1,8 @@
 import Link from 'next/link'
 
-import Avatar from './Avatar'
-import CoverImage from './CoverImage'
-import DateFormatter from './DateFormatter'
+import Avatar from '@/components/Avatar'
+import CoverImage from '@/components/CoverImage'
+import DateFormatter from '@/components/DateFormatter'
 
 import type Author from '@/interfaces/author'
 
