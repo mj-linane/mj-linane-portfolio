@@ -3,7 +3,7 @@ import { useRouter } from 'next/router'
 import { useTheme } from 'next-themes'
 import React, { useEffect, useState } from 'react'
 
-import userData from '@constants/data'
+import userData from '@/constants/data'
 
 export default function NavBar() {
   const router = useRouter()
