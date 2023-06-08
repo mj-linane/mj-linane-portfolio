@@ -18,7 +18,7 @@ type Props = {
   preview?: boolean
 }
 
-export default function Post({ post, morePosts, preview }: Props) {
+export default function Post({ post, preview }: Props) {
   const router = useRouter()
   const title = `${post.title} | my blog`
   if (!router.isFallback && !post?.slug) {
