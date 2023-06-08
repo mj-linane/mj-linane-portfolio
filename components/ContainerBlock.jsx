@@ -1,8 +1,8 @@
 import Head from 'next/head'
 import { useRouter } from 'next/router'
 
-import Footer from './Footer.jsx'
-import NavBar from './NavBar.jsx'
+import Footer from '@/components/Footer.jsx'
+import NavBar from '@/components/NavBar.jsx'
 
 export default function ContainerBlock({ children, ...customMeta }) {
   const router = useRouter()
