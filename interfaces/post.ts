@@ -1,7 +1,7 @@
-import Author from "@interfaces/author";
+import Author from '@/interfaces/author'
 
 type PostType = {
-  author: Author;
+  author: Author
   slug: string
   title: string
   date: string
