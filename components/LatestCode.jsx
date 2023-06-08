@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from 'react'
 
-import LatestCodeCard from '@components/LatestCodeCard'
-import userData from '@constants/data'
-import getLatestRepos from '@lib/GetLatestRepos.js'
-// import { getLatestRepos } from "@lib/api"
+import LatestCodeCard from '@/components/LatestCodeCard'
+
+import userData from '@/constants/data'
+import getLatestRepos from '@/lib/GetLatestRepos'
 
 export default function LatestCode({ repositories }) {
   const [repos, setRepos] = useState([])
