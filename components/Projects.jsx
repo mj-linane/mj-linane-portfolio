@@ -1,10 +1,9 @@
-import React from 'react'
 import { RoughNotationGroup } from 'react-rough-notation'
 
+import { ProjectCard } from '@/components/ProjectCard'
 import RainbowHighlight from '@/components/RainbowHighlight'
-import userData from '@constants/data'
 
-import { ProjectCard } from './ProjectCard'
+import userData from '@/constants/data'
 
 export default function Projects() {
   return (
