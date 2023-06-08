@@ -1,3 +1,5 @@
+/* eslint-disable no-console */
+
 import React, { useEffect, useState } from 'react'
 
 import LatestCodeCard from '@/components/LatestCodeCard'
@@ -14,6 +16,7 @@ export default function LatestCode({ repositories }) {
         await getLatestRepos(userData)
         setRepos(repositories)
       } catch (error) {
+        console.error(error)
         setError('An error occurred while fetching the latest repositories.')
       }
     }
