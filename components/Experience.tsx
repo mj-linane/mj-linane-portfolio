@@ -3,7 +3,7 @@ import { RoughNotationGroup } from 'react-rough-notation'
 import ExperienceCard from './ExperienceCard'
 import RainbowHighlight from './RainbowHighlight'
 
-import userData from '@/constants/data'
+import data from '@/constants/data'
 
 export default function Experience() {
   return (
@@ -25,7 +25,7 @@ export default function Experience() {
       <div className="bg-neutral-200 dark:bg-neutral-900 -mt-4 py-20 lg:py-40">
         <div className="grid grid-cols-1 dark:bg-neutral-900 max-w-xl mx-auto pt-20">
           {/* Experience Card*/}
-          {userData.experience.map((experience, index) => (
+          {data.experience.map((experience, index) => (
             <>
               <ExperienceCard
                 key={index}
@@ -35,7 +35,7 @@ export default function Experience() {
                 company={experience.company}
                 companyLink={experience.companyLink}
               />
-              {index === userData.experience.length - 1 ? null : (
+              {index === data.experience.length - 1 ? null : (
                 <div className="divider-container flex flex-col items-center -mt-2">
                   <div className="w-4 h-4 bg-purple-500 rounded-full relative z-10">
                     <div className="w-4 h-4 bg-purple-500 rounded-full relative z-10 animate-ping"></div>
