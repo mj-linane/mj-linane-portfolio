@@ -1,6 +1,6 @@
 // noinspection SpellCheckingInspection
 
-const userData = {
+const data = {
   githubUsername: 'mj-linane',
   name: 'MJ Linane',
   designation: 'Full-Stack Developer',
@@ -137,4 +137,4 @@ const userData = {
   },
 }
 
-export default userData
+export default data
