@@ -1,12 +1,19 @@
-import Image from 'next/image'
 import Link from 'next/link'
 
-import userData from '@/constants/data'
+import FavoriteProjectCard from '@/components/FavoriteProjectCard'
+import data from '@/constants/data'
+
+type Project = {
+  title: string
+  link: string
+  imgUrl: string
+  favorite: boolean
+}
 
 export default function FavoriteProjects() {
   // Generate a list of favorite projects
-  const favoriteProjects = []
-  userData.projects.forEach((project) => {
+  const favoriteProjects: Project[] = []
+  data.projects.forEach((project: Project) => {
     if (project.favorite) {
       favoriteProjects.push(project)
     }
@@ -40,39 +47,5 @@ export default function FavoriteProjects() {
         </div>
       </div>
     </section>
-  )
-}
-
-const FavoriteProjectCard = function ({
-  imgUrl,
-  altText,
-  title,
-  link,
-  number,
-}) {
-  return (
-    <a
-      href={link}
-      className="w-full block col-span-3 border-2 border-black box-shadow-md-black"
-    >
-      <div className="relative overflow-hidden h-80">
-        {/* Next image component */}
-        <Image
-          src={imgUrl}
-          alt={altText}
-          fill
-          quality={100}
-          style={{
-            objectFit: 'cover',
-          }}
-        />
-        <h1 className="absolute top-10 left-10 text-neutral-50 font-bold font-typewriter text-xl bg-purple-500 rounded-md px-2">
-          {title}
-        </h1>
-        <h1 className="absolute bottom-10 left-10 dark:text-neutral-800 font-bold font-typewriter text-xl">
-          {number}
-        </h1>
-      </div>
-    </a>
   )
 }
