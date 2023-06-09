@@ -1,4 +1,4 @@
-import userData from '@/constants/data'
+import data from '@/constants/data'
 
 export default function Footer() {
   return (
@@ -11,7 +11,8 @@ export default function Footer() {
           </div>
           <div className="space-x-4 flex flex-row items-center">
             <a
-              href={userData.socialLinks.twitter}
+              title="Twitter"
+              href={data.socialLinks.twitter}
               className="text-base font-normal text-neutral-600 dark:text-neutral-300"
             >
               <svg
@@ -26,7 +27,8 @@ export default function Footer() {
               </svg>
             </a>
             <a
-              href={userData.socialLinks.github}
+              title="Github"
+              href={data.socialLinks.github}
               className="text-base font-normal text-neutral-600 dark:text-neutral-300"
             >
               <svg
@@ -41,7 +43,8 @@ export default function Footer() {
               </svg>
             </a>
             <a
-              href={userData.socialLinks.linkedin}
+              title="Linkedin"
+              href={data.socialLinks.linkedin}
               className="text-base font-normal text-neutral-600 dark:text-neutral-300"
             >
               <svg
