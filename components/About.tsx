@@ -2,7 +2,7 @@ import Image from 'next/image'
 import { RoughNotationGroup } from 'react-rough-notation'
 
 import RainbowHighlight from '@/components/RainbowHighlight'
-import userData from '@/constants/data'
+import data from '@/constants/data'
 
 export default function About() {
   return (
@@ -18,16 +18,13 @@ export default function About() {
       </div>
       <div className="bg-neutral-200 mt-10 pt-20 dark:bg-neutral-900">
         <div className="text-container max-w-6xl mx-auto py-20">
-          <p
-            className="font-typewriter leading-loose text-2xl md:text-4xl font-semibold mx-4"
-            style={{ lineHeight: '3rem' }}
-          >
-            {userData.about.title} I&apos;m currently working on{''}
+          <p className="font-typewriter text-2xl md:text-4xl font-semibold mx-4 leading-10">
+            {data.about.title} I&apos;m currently working on{''}
             <a
               className="font-typewriter font-bold bg-purple-500 px-2 py-1 text-neutral-50"
-              href={userData.about.currentProjectUrl}
+              href={data.about.currentProjectUrl}
             >
-              {userData.about.currentProject}
+              {data.about.currentProject}
             </a>
           </p>
         </div>
@@ -42,7 +39,7 @@ export default function About() {
               <p className="text-lg text-neutral-500 mt-4 dark:text-neutral-300">
                 For any sort of help / enquiry, send me an{' '}
                 <a
-                  href={`mailto:${userData.email}`}
+                  href={`mailto:${data.email}`}
                   className="text-neutral-800 border-b-2 border-neutral-800 dark:border-neutral-300 font-bold dark:text-neutral-300"
                 >
                   email
@@ -58,7 +55,7 @@ export default function About() {
                 I&apos;m looking for additional work, so if a curious if my
                 skills and experience would be a good fit, check out my{' '}
                 <a
-                  href={userData.resumeUrl}
+                  href={data.resumeUrl}
                   target="_blank"
                   rel="noreferrer"
                   className="text-neutral-800 border-b-2 border-neutral-800 dark:border-neutral-300 font-bold dark:text-neutral-300"
@@ -72,7 +69,7 @@ export default function About() {
           </div>
           {/*text area*/}
           <div className="col-span-2 md:col-span-1">
-            {userData.about.description?.map((description, index) => (
+            {data.about.description?.map((description, index) => (
               <p
                 key={index}
                 className="text-xl text-neutral-700 mb-4 dark:text-neutral-300"
@@ -84,7 +81,7 @@ export default function About() {
               my tech stack
             </h1>
             <div className="border-4 border-black bg-neutral-50 box-shadow-md-black grid grid-cols-3 gap-y-4 place-items-center my-5 py-5">
-              {userData.about.techStack?.map((tech, index) => (
+              {data.about.techStack?.map((tech, index) => (
                 <div key={index} className="col-span-1">
                   <Image
                     src={tech.image}

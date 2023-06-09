@@ -3,7 +3,7 @@ import { useRouter } from 'next/router'
 import { useTheme } from 'next-themes'
 import React, { useEffect, useState } from 'react'
 
-import userData from '@/constants/data'
+import data from '@/constants/data'
 
 export default function NavBar() {
   const router = useRouter()
@@ -20,10 +20,10 @@ export default function NavBar() {
           <Link href="/">
             <div>
               <h1 className="font-semibold text-xl dark:text-neutral-100">
-                {userData.name}
+                {data.name}
               </h1>
               <p className="text-base font-light text-neutral-500 dark:text-neutral-300">
-                {userData.designation}
+                {data.designation}
               </p>
             </div>
           </Link>
@@ -140,7 +140,8 @@ export default function NavBar() {
         {/*social media links*/}
         <div className="space-x-4 flex flex-row items-center">
           <a
-            href={userData.socialLinks.twitter}
+            title="Twitter"
+            href={data.socialLinks.twitter}
             className="text-base font-normal text-neutral-600 dark:text-neutral-300"
           >
             <svg
@@ -156,7 +157,8 @@ export default function NavBar() {
           </a>
           <div className="space-x-4 flex flex-row items-center">
             <a
-              href={userData.socialLinks.github}
+              title="Github"
+              href={data.socialLinks.github}
               className="text-base font-normal text-neutral-600 dark:text-neutral-300"
             >
               <svg
@@ -172,7 +174,8 @@ export default function NavBar() {
             </a>
           </div>
           <a
-            href={userData.socialLinks.linkedin}
+            title="Linkedin"
+            href={data.socialLinks.linkedin}
             className="text-base font-normal text-neutral-600 dark:text-neutral-300"
           >
             <svg

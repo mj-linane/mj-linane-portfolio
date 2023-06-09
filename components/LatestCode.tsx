@@ -1,24 +1,27 @@
-/* eslint-disable no-console */
-
 import React, { useEffect, useState } from 'react'
 
 import LatestCodeCard from '@/components/LatestCodeCard'
+import data from '@/constants/data'
+import GetLatestRepos from '@/lib/GetLatestRepos'
 
-import userData from '@/constants/data'
-import getLatestRepos from '@/lib/GetLatestRepos'
+type Repository = {
+  id: number
+  name: string
+}
 
-export default function LatestCode({ repositories }) {
-  const [repos, setRepos] = useState([])
-  const [error, setError] = useState(null)
+export default function LatestCode(repositories: Repository[]) {
+  const [repos, setRepos] = useState()
+  const [error, setError] = useState(false)
 
   useEffect(() => {
     async function asyncGetRepos() {
       try {
-        await getLatestRepos(userData)
+        await GetLatestRepos(data)
         setRepos(repositories)
       } catch (error) {
+        // eslint-disable-next-line no-console
         console.error(error)
-        setError('An error occurred while fetching the latest repositories.')
+        setError(true)
       }
     }
 
@@ -34,7 +37,7 @@ export default function LatestCode({ repositories }) {
           </h1>
 
           <a
-            href={`https://github.com/${userData.githubUsername}`}
+            href={`https://github.com/${data.githubUsername}`}
             className="mb-20 md:mb-0 px-8 py-4 border-2 border-black bg-purple-500 cursor-pointer uppercase font-typewriter tracking-wider font-semibold space-x-4 text-center dark:text-neutral-50"
           >
             {/*<svg*/}
@@ -61,10 +64,9 @@ export default function LatestCode({ repositories }) {
         {/* Single github Repo */}
 
         {error && <p>{error}</p>}
-        {repos &&
-          repos.map((latestRepo, index) => (
-            <LatestCodeCard latestRepo={latestRepo} key={index} />
-          ))}
+        {repos.map((latestRepo, index) => (
+          <LatestCodeCard latestRepo={latestRepo} key={index} />
+        ))}
       </div>
     </section>
   )

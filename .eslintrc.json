@@ -5,24 +5,113 @@
   "extends": [
     "next/core-web-vitals",
     "eslint:recommended",
-    "plugin:@typescript-eslint/recommended"
+    "plugin:@typescript-eslint/recommended",
+    "plugin:@typescript-eslint/recommended-requiring-type-checking",
+    "plugin:@typescript-eslint/strict"
   ],
   "parser": "@typescript-eslint/parser",
-  "plugins": ["import", "unused-imports", "@typescript-eslint"],
+  "parserOptions": {
+    "project": true,
+    "tsconfigRootDir": "__dirname"
+  },
+  "plugins": [
+    "import",
+    "unused-imports",
+    "@typescript-eslint",
+    "filenames"
+  ],
   "settings": {
     "import/resolver": {
       "node": {
-        "extensions": [".js", ".jsx", ".ts", ".tsx"],
-        "moduleDirectory": ["node_modules", "src/"]
+        "extensions": [
+          ".js",
+          ".jsx",
+          ".ts",
+          ".tsx"
+        ],
+        "moduleDirectory": [
+          "node_modules",
+          "src/"
+        ]
       }
     }
   },
   "rules": {
     "no-unused-vars": "off",
+    "filenames/match-exported": [
+      2,
+      null,
+      "\\.(jsx?|tsx?)$"
+    ],
+    "prefer-destructuring": [
+      "error",
+      {
+        "VariableDeclarator": {
+          "array": false,
+          "object": true
+        },
+        "AssignmentExpression": {
+          "array": true,
+          "object": true
+        }
+      },
+      {
+        "enforceForRenamedProperties": false
+      }
+    ],
+    "react/require-default-props": [
+      true,
+      {
+        "forbidDefaultForRequired": true,
+        "classes": "defaultProps",
+        "functions": "defaultProps"
+      }
+    ],
     "@typescript-eslint/no-unused-vars": "off",
     "@typescript-eslint/explicit-module-boundary-types": "off",
     "@typescript-eslint/no-non-null-assertion": "off",
+    "@typescript-eslint/consistent-type-definitions": [
+      "error",
+      "type"
+    ],
     "@typescript-eslint/no-inferrable-types": "off",
+    "@typescript-eslint/naming-convention": [
+      "error",
+      {
+        "selector": "default",
+        "format": [
+          "camelCase"
+        ],
+        "leadingUnderscore": "allow"
+      },
+      {
+        "selector": "typeLike",
+        "format": [
+          "PascalCase"
+        ]
+      },
+      {
+        "selector": "variableLike",
+        "format": [
+          "camelCase",
+          "UPPER_CASE",
+          "PascalCase"
+        ],
+        "leadingUnderscore": "allow"
+      },
+      {
+        // selector for nextjs pages and component names
+        "selector": "variable",
+        "format": [
+          "PascalCase"
+        ],
+        "filter": {
+          // selector for nextjs pages and component names
+          "regex": "^(?!(?:[A-Z][a-z]+)+$)[A-Z][a-zA-Z]+$",
+          "match": true
+        }
+      }
+    ],
     "@next/next/no-img-element": "off",
     "unused-imports/no-unused-imports": "error",
     "unused-imports/no-unused-vars": [
@@ -34,16 +123,21 @@
         "argsIgnorePattern": "^_"
       }
     ],
-
     "no-eq-null": "warn",
     "import/order": [
       "warn",
       {
         "groups": [
-          ["builtin", "external"],
+          [
+            "builtin",
+            "external"
+          ],
           "internal",
           "parent",
-          ["sibling", "index"],
+          [
+            "sibling",
+            "index"
+          ],
           "object"
         ],
         "newlines-between": "always",
@@ -54,6 +148,8 @@
       }
     ],
     "complexity": "warn",
-    "no-console": ["error"]
+    "no-console": [
+      "error"
+    ]
   }
 }

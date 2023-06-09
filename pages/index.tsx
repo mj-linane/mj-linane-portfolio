@@ -2,8 +2,8 @@ import ContainerBlock from '@/components/ContainerBlock'
 import FavoriteProjects from '@/components/FavoriteProjects'
 import Hero from '@/components/Hero'
 import LatestCode from '@/components/LatestCode'
-import userData from '@/constants/data'
-import getLatestRepos from '@/lib/GetLatestRepos'
+import data from '@/constants/data'
+import GetLatestRepos from '@/lib/GetLatestRepos'
 
 type Repository = {
   id: string
@@ -27,7 +27,7 @@ export default function Home({ repositories }: Props) {
 }
 
 export async function getStaticProps() {
-  const repositories = await getLatestRepos(userData)
+  const repositories = await GetLatestRepos(data)
   return {
     props: {
       repositories,

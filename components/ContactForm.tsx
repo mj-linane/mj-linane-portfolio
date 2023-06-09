@@ -3,6 +3,15 @@ import { useForm, ValidationError } from '@formspree/react'
 export default function ContactForm() {
   const [state, handleSubmit] = useForm('mlezndgo')
 
+  const onSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault()
+
+    handleSubmit(e).catch((error) => {
+      // eslint-disable-next-line no-console
+      console.error('Failed to submit form:', error)
+    })
+  }
+
   if (state.succeeded) {
     return (
       <p className="font-typewriter text-neutral-800 font-semibold">
@@ -12,7 +21,7 @@ export default function ContactForm() {
   }
 
   return (
-    <form className="form p-4 flex flex-col w-full" onSubmit={handleSubmit}>
+    <form className="form p-4 flex flex-col w-full" onSubmit={onSubmit}>
       <label
         htmlFor="name"
         className="form-label text-sm text-neutral-800 uppercase mx-4 track-wide"
@@ -50,6 +59,7 @@ export default function ContactForm() {
         type="textarea"
         className="form-textarea border-2 border-black box-shadow-black dark:bg-neutral-50 py-2 mt-2 px-1 mx-4"
         name="comment"
+        id="comment"
       />
       <button
         type="submit"
