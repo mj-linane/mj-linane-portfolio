@@ -1,9 +1,8 @@
 import { RoughNotationGroup } from 'react-rough-notation'
 
-import { ProjectCard } from '@/components/ProjectCard'
+import ProjectCard from '@/components/ProjectCard'
 import RainbowHighlight from '@/components/RainbowHighlight'
-
-import userData from '@/constants/data'
+import data from '@/constants/data'
 
 export default function Projects() {
   return (
@@ -20,7 +19,7 @@ export default function Projects() {
       {/*Grid Starts Here*/}
       <div className="bg-neutral-200 dark:bg-neutral-900">
         <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-8 py-20 pt-40 pb-40">
-          {userData.projects.map((project, index) => (
+          {data.projects.map((project, index) => (
             <ProjectCard
               title={project.title}
               link={project.link}
