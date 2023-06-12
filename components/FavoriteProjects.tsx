@@ -38,7 +38,7 @@ export default function FavoriteProjects() {
             <FavoriteProjectCard
               title={project.title}
               link={project.link}
-              imgUrl={project.imgUrl}
+              imageURL={project.imgUrl}
               altText={project.title}
               number={index + 1}
               key={`${index + 1}`}
