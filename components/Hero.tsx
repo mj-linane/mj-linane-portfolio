@@ -23,20 +23,6 @@ export default function Hero() {
           </h1>
         </div>
       </div>
-
-      {/*// TODO: fix this image*/}
-      {/*Hero Image container*/}
-      {/*<div*/}
-      {/*    className="relative w-full mt-20 mx-auto">*/}
-      {/*    /!*className="relative md:hidden w-full md:w-1/2 -mr-40 mt-20">*!/*/}
-      {/*        <Image src={userData.avatarUrl}*/}
-      {/*               alt="Avatar"*/}
-      {/*               layout="fill"*/}
-      {/*               // height="100"*/}
-      {/*               // width="100"*/}
-      {/*               className="box-shadow-lg"*/}
-      {/*        />*/}
-      {/*</div>*/}
     </section>
   )
 }
