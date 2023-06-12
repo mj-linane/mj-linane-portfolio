@@ -1,11 +1,7 @@
-type LatestRepo = {
-  name: string
-  description: string
-  clone_url: string
-}
+import type Repository from '@/interfaces/repository'
 
 type Props = {
-  latestRepo: LatestRepo
+  latestRepo: Repository
 }
 
 const LatestCodeCard = ({ latestRepo }: Props) => (
