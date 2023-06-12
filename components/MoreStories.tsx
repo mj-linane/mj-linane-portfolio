@@ -5,8 +5,7 @@ type Props = {
   posts: Post[]
 }
 
-export default function MoreStories ({ posts }: Props)
-{
+export default function MoreStories({ posts }: Props) {
   return (
     <section>
       <h2 className="mb-8 text-6xl md:text-7xl font-bold tracking-tighter leading-tight">
@@ -21,7 +20,8 @@ export default function MoreStories ({ posts }: Props)
             date={post.date}
             author={post.author}
             slug={post.slug}
-            excerpt={post.excerpt} />
+            excerpt={post.excerpt}
+          />
         ))}
       </div>
     </section>
