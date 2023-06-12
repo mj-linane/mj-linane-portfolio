@@ -20,16 +20,36 @@
     "jsx": "preserve",
     "baseUrl": ".",
     "paths": {
-      "@/components/*": ["components/*"],
-      "@/data/*": ["data/*"],
-      "@/utils/*": ["utils/*"],
-      "@/layouts/*": ["layouts/*"],
-      "@/lib/*": ["lib/*"],
-      "@/styles/*": ["styles/*"],
-      "@/hooks/*": ["hooks/*"],
-      "@/constants/*": ["constants/*"],
-      "@/types/*": ["@types/*"],
-      "@/interfaces/*": ["interfaces/*"]
+      "@/components/*": [
+        "components/*"
+      ],
+      "@/data/*": [
+        "data/*"
+      ],
+      "@/utils/*": [
+        "utils/*"
+      ],
+      "@/layouts/*": [
+        "layouts/*"
+      ],
+      "@/lib/*": [
+        "lib/*"
+      ],
+      "@/styles/*": [
+        "styles/*"
+      ],
+      "@/hooks/*": [
+        "hooks/*"
+      ],
+      "@/constants/*": [
+        "constants/*"
+      ],
+      "@/types/*": [
+        "@types/*"
+      ],
+      "@/interfaces/*": [
+        "interfaces/*"
+      ]
     }
   },
   "include": [
