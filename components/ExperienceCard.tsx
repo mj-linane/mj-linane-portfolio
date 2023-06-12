@@ -6,29 +6,27 @@ type Props = {
   companyLink: string
 }
 
-export default function ExperienceCard(experience: Props) {
+export default function ExperienceCard({
+  title,
+  description,
+  year,
+  company,
+  companyLink,
+}: Props) {
   return (
     <div className="relative border-4 border-black box-shadow-md-black p-4 bg-neutral-50 dark:bg-neutral-800 z-10 mx-4">
       <h1 className="absolute -top-10 lg:top-15 font-typewriter tracking-wider text-4xl text-neutral-500 font-bold dark:text-neutral-400">
-        {experience.year}
+        {year}
       </h1>
       <h1 className="font-semibold font-typewriter tracking-wider text-xl">
-        {experience.title}
+        {title}
       </h1>
-      <a href={experience.companyLink} className="text-neutral-500">
-        {experience.company}
+      <a href={companyLink} className="text-neutral-500">
+        {company}
       </a>
       <p className="text-neutral-600 dark:text-neutral-400 my-2">
-        {experience.description}
+        {description}
       </p>
     </div>
   )
-}
-
-ExperienceCard.defaultProps = {
-  title: 'Title',
-  description: 'Description',
-  year: 'Year',
-  company: 'Company',
-  companyLink: 'https://www.google.com',
 }
