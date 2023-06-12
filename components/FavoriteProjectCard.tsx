@@ -1,42 +1,40 @@
 import Image from 'next/image'
 
 type Props = {
-  imgUrl: string
-  altText: string
+  imageURL: string
+  altText?: string
   title: string
   link: string
   number: number
 }
 
-export default function FavoriteProjectCard(project: Props) {
+export default function FavoriteProjectCard({
+  imageURL,
+  altText = '',
+  title,
+  link,
+  number,
+}: Props) {
   return (
     <a
-      href={project.link}
+      href={link}
       className="w-full block col-span-3 border-2 border-black box-shadow-md-black"
     >
       <div className="relative overflow-hidden h-80">
         <Image
-          src={project.imgUrl}
-          alt={project.altText}
+          src={imageURL}
+          alt={altText}
           className="object-cover"
           fill
           quality={100}
         />
         <h1 className="absolute top-10 left-10 text-neutral-50 font-bold font-typewriter text-xl bg-purple-500 rounded-md px-2">
-          {project.title}
+          {title}
         </h1>
         <h1 className="absolute bottom-10 left-10 dark:text-neutral-800 font-bold font-typewriter text-xl">
-          {project.number}
+          {number}
         </h1>
       </div>
     </a>
   )
-}
-
-FavoriteProjectCard.defaultProps = {
-  imgUrl: 'https://via.placeholder.com/300x200',
-  altText: 'placeholder',
-  title: 'Project Title',
-  link: 'https://github.com',
-  number: 1,
 }
