@@ -60,7 +60,7 @@
       }
     ],
     "react/require-default-props": [
-      true,
+      "error",
       {
         "forbidDefaultForRequired": true,
         "classes": "defaultProps",
