@@ -3,11 +3,8 @@ import FavoriteProjects from '@/components/FavoriteProjects'
 import Hero from '@/components/Hero'
 import LatestCode from '@/components/LatestCode'
 import data from '@/constants/data'
+import type Repository from '@/interfaces/repository'
 import GetLatestRepos from '@/lib/GetLatestRepos'
-
-type Repository = {
-  id: string
-}
 
 type Props = {
   repositories: Repository[]
@@ -27,7 +24,7 @@ export default function Home({ repositories }: Props) {
 }
 
 export async function getStaticProps() {
-  const repositories = await GetLatestRepos(data)
+  const repositories: Repository[] = await GetLatestRepos({ data })
   return {
     props: {
       repositories,
