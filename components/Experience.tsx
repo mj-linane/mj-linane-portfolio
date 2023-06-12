@@ -1,8 +1,7 @@
 import { RoughNotationGroup } from 'react-rough-notation'
 
-import ExperienceCard from './ExperienceCard'
-import RainbowHighlight from './RainbowHighlight'
-
+import ExperienceCard from '@/components/ExperienceCard'
+import RainbowHighlight from '@/components/RainbowHighlight'
 import data from '@/constants/data'
 
 export default function Experience() {
