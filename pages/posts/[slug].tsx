@@ -1,3 +1,4 @@
+import type { GetStaticProps, GetStaticPaths } from 'next'
 import ErrorPage from 'next/error'
 import Head from 'next/head'
 import { useRouter } from 'next/router'
@@ -7,25 +8,23 @@ import Layout from '@/components/Layout'
 import PostBody from '@/components/PostBody'
 import PostHeader from '@/components/PostHeader'
 import PostTitle from '@/components/PostTitle'
-
-import PostType from '@/interfaces/post'
+import Post from '@/interfaces/post'
 import { getPostBySlug, getAllPosts } from '@/lib/api'
 import markdownToHtml from '@/lib/markdownToHtml'
 
 type Props = {
-  post: PostType
-  morePosts: PostType[]
-  preview?: boolean
+  post: Post
+  morePosts: Post[]
 }
 
-export default function Post({ post, preview }: Props) {
+export default function Post({ post }: Props) {
   const router = useRouter()
   const title = `${post.title} | my blog`
   if (!router.isFallback && !post?.slug) {
     return <ErrorPage statusCode={404} />
   }
   return (
-    <Layout preview={preview}>
+    <Layout>
       <Container>
         {/*<Header />*/}
         {router.isFallback ? (
@@ -52,14 +51,8 @@ export default function Post({ post, preview }: Props) {
   )
 }
 
-type Params = {
-  params: {
-    slug: string
-  }
-}
-
-export async function getStaticProps({ params }: Params) {
-  const post = getPostBySlug(params.slug, [
+export const getStaticProps: GetStaticProps<{ data: Props }> = async () => {
+  const post = getPostBySlug(data.slug, [
     'title',
     'date',
     'slug',
@@ -68,6 +61,7 @@ export async function getStaticProps({ params }: Params) {
     'ogImage',
     'coverImage',
   ])
+
   const content = await markdownToHtml(post.content || '')
 
   return {
@@ -80,15 +74,17 @@ export async function getStaticProps({ params }: Params) {
   }
 }
 
-export async function getStaticPaths() {
+export const getStaticPaths: GetStaticPaths = async () => {
   const posts = getAllPosts(['slug'])
 
+  const paths = posts.map((post) => ({
+    params: {
+      slug: post.slug,
+    },
+  }))
+
   return {
-    paths: posts.map((post) => ({
-      params: {
-        slug: post.slug,
-      },
-    })),
+    paths,
     fallback: false,
   }
 }
