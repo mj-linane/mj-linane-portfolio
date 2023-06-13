@@ -1,33 +1,14 @@
-import axios, { AxiosResponse } from 'axios'
+import axios from 'axios'
 
-import data from '@/constants/data.js'
 import Repository from '@/interfaces/repository'
 
-type Props = {
-  data: typeof data
+import data from '../constants/data'
+
+const GetLatestRepos = async (): Promise<Repository[]> => {
+  const response = await axios.get<Repository[]>(
+    `https://api.github.com/users/${data.githubUsername}/repos`
+  )
+  return response.data
 }
 
-type GitHubApiResponse = {
-  total_count: number
-  incomplete_results: boolean
-  items: Repository[]
-}
-
-export default async function GetLatestRepos({
-  data,
-}: Props): Promise<Repository[]> {
-  const userName = data.githubUsername
-
-  try {
-    const res: AxiosResponse<GitHubApiResponse> = await axios.get(
-      `https://api.github.com/search/repositories?q=user:${userName}+sort:updated`
-    )
-    const repos = res.data.items
-
-    return repos.slice(0, 6)
-  } catch (err) {
-    // eslint-disable-next-line no-console
-    console.error(err)
-    throw err
-  }
-}
+export default GetLatestRepos
