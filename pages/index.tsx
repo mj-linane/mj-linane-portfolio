@@ -1,6 +1,7 @@
 import ContainerBlock from '@/components/ContainerBlock'
 import FavoriteProjects from '@/components/FavoriteProjects'
 import Hero from '@/components/Hero'
+import LatestCode from '@/components/LatestCode'
 
 export default function Home() {
   return (
