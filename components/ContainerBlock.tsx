@@ -5,17 +5,23 @@ import React from 'react'
 import Footer from '@/components/Footer'
 import NavBar from '@/components/NavBar'
 
-type Props = {
-  children?: React.ReactNode
+type MetaProps = {
+  title?: string
+  description?: string
+  image?: string
+  type?: string
+  date?: string
 }
 
-export default function ContainerBlock({
-  children = null,
-  ...customMeta
-}: Props) {
+type Props = {
+  children?: React.ReactNode
+  customMeta?: MetaProps
+}
+
+export default function ContainerBlock({ children = null, customMeta }: Props) {
   const router = useRouter()
 
-  const meta = {
+  const meta: MetaProps = {
     title: 'MJ Linane - Developer, Designer, Teacher',
     description:
       'I have been developing websites and web applications' +
