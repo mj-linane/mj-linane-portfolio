@@ -2,44 +2,44 @@ import fs from 'fs'
 import matter from 'gray-matter'
 import { join } from 'path'
 
+import type Post from '@/interfaces/post'
+
 const postsDirectory = join(process.cwd(), '_posts')
 
 export function getPostSlugs() {
   return fs.readdirSync(postsDirectory)
 }
 
-export function getPostBySlug(slug: string, fields: string[] = []) {
+type PostData = Omit<Post, 'slug' | 'content'>
+
+export function getPostBySlug(slug: string, fields: string[] = []): Post {
   const realSlug = slug.replace(/\.md$/, '')
   const fullPath = join(postsDirectory, `${realSlug}.md`)
   const fileContents = fs.readFileSync(fullPath, 'utf8')
   const { data, content } = matter(fileContents)
 
-  type Items = Record<string, string>
+  const postData = data as PostData
 
-  const items: Items = {}
-
+  const post: Post = {
+    slug: realSlug,
+    content,
+    ...postData,
+  }
   // Ensure only the minimal needed data is exposed
-  fields.forEach((field) => {
-    if (field === 'slug') {
-      items[field] = realSlug
-    }
-    if (field === 'content') {
-      items[field] = content
-    }
-
-    if (typeof data[field] !== 'undefined') {
-      items[field] = data[field]
+  const items: Partial<Post> = {} // Use Partial<Post> as not all properties of Post may be present
+  fields.forEach((field: keyof Post) => {
+    if (post[field] !== undefined) {
+      items[field] = post[field]
     }
   })
-
-  return items
+  return items as Post
 }
 
-export function getAllPosts(fields: string[] = []) {
+export async function getAllPosts(fields: string[] = []): Promise<Post[]> {
   const slugs = getPostSlugs()
-  const posts = slugs
-    .map((slug) => getPostBySlug(slug, fields))
-    // sort posts by date in descending order
-    .sort((post1, post2) => (post1.date > post2.date ? -1 : 1))
-  return posts
+  const posts = await Promise.all(
+    slugs.map((slug) => getPostBySlug(slug, fields))
+  )
+  // sort posts by date in descending order
+  return posts.sort((post1, post2) => (post1.date > post2.date ? -1 : 1))
 }
