@@ -20,25 +20,25 @@ This is the repository for my personal portfolio website, built with Next.js and
 
 Follow these steps to set up the project on your local machine:
 
-1. Clone the repository:
+### 1. Clone the repository
 
 ```bash
 git clone https://github.com/mj-linane/mj-linane-portfolio.git
 ```
 
-2. Navigate into the project directory:
+### 2. Navigate into the project directory
 
 ```bash
 cd mj-linane-portfolio
 ```
 
-3. Install the dependencies:
+### 3. Install the dependencies
 
 ```bash
 npm install
 ```
 
-4. Start the development server:
+### 4. Start the development server
 
 ```bash
 npm run dev
