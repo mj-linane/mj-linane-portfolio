@@ -10,7 +10,7 @@ module.exports = {
                 4000: "4000ms",
             },
         },
-        fontFamily:{
+        fontFamily: {
             'typewriter': ['"Special Elite"', 'monospace'],
         }
     },
@@ -22,5 +22,6 @@ module.exports = {
         require("@tailwindcss/forms")({
             strategy: 'class',
         }),
+        require('@tailwindcss/typography'),
     ],
 };

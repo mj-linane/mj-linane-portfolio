@@ -1,7 +1,7 @@
 @font-face {
-    font-family:'Special Elite';
-    font-weight: normal;
-    font-display: swap;
-    font-style: normal;
-    src: url('https://fonts.googleapis.com/css2?family=Special+Elite&display=swap');
+  font-family: 'Special Elite';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url('/fonts/specialelite-regular-webfont.woff2') format('woff2');
 }
