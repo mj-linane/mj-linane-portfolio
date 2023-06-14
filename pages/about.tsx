@@ -3,7 +3,7 @@ import ContainerBlock from '@/components/ContainerBlock'
 
 export default function about() {
   return (
-    <ContainerBlock title="About - MJ Linane">
+    <ContainerBlock customMeta={{ title: 'About - MJ Linane' }}>
       <AboutMe />
     </ContainerBlock>
   )

@@ -3,7 +3,7 @@ import Experience from '@/components/Experience'
 
 export default function experience() {
   return (
-    <ContainerBlock title="Experience - MJ Linane">
+    <ContainerBlock customMeta={{ title: 'Experience - MJ Linane' }}>
       <Experience />
     </ContainerBlock>
   )

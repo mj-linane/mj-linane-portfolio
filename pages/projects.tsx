@@ -5,7 +5,7 @@ import Projects from '@/components/Projects'
 
 export default function projects() {
   return (
-    <ContainerBlock title="Projects - MJ Linane">
+    <ContainerBlock customMeta={{ title: 'Projects - MJ Linane' }}>
       <Projects />
     </ContainerBlock>
   )
