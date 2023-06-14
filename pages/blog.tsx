@@ -5,11 +5,11 @@ import HeroPost from '@/components/HeroPost'
 import Intro from '@/components/Intro'
 import Layout from '@/components/Layout'
 import MoreStories from '@/components/MoreStories'
-import Post from '@/interfaces/post'
+import PostType from '@/interfaces/post'
 import { getAllPosts } from '@/lib/api'
 
 type Props = {
-  allPosts: Post[]
+  allPosts: PostType[]
 }
 
 export default function blog({ allPosts }: Props) {

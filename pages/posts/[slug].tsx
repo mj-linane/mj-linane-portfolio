@@ -8,13 +8,13 @@ import Layout from '@/components/Layout'
 import PostBody from '@/components/PostBody'
 import PostHeader from '@/components/PostHeader'
 import PostTitle from '@/components/PostTitle'
-import Post from '@/interfaces/post'
+import PostType from '@/interfaces/post'
 import { getPostBySlug, getAllPosts } from '@/lib/api'
 import markdownToHtml from '@/lib/markdownToHtml'
 
 type Props = {
-  post: Post
-  morePosts: Post[]
+  post: PostType
+  morePosts: PostType[]
 }
 
 export default function Post({ post }: Props) {
@@ -51,8 +51,8 @@ export default function Post({ post }: Props) {
   )
 }
 
-export const getStaticProps: GetStaticProps<{ data: Props }> = async () => {
-  const post = getPostBySlug(data.slug, [
+export const getStaticProps: GetStaticProps<{ postData: Props }> = async () => {
+  const post = getPostBySlug(postData.post.slug as string, [
     'title',
     'date',
     'slug',

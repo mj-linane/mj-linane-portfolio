@@ -1,8 +1,8 @@
 import PostPreview from '@/components/PostPreview'
-import type Post from '@/interfaces/post'
+import type PostType from '@/interfaces/post'
 
 type Props = {
-  posts: Post[]
+  posts: PostType[]
 }
 
 export default function MoreStories({ posts }: Props) {
