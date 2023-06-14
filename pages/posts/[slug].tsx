@@ -1,4 +1,3 @@
-import type { GetStaticProps, GetStaticPaths } from 'next'
 import ErrorPage from 'next/error'
 import Head from 'next/head'
 import { useRouter } from 'next/router'
@@ -14,15 +13,16 @@ import markdownToHtml from '@/lib/markdownToHtml'
 
 type Props = {
   post: PostType
-  morePosts: PostType[]
 }
 
 export default function Post({ post }: Props) {
   const router = useRouter()
   const title = `${post.title} | my blog`
+
   if (!router.isFallback && !post?.slug) {
     return <ErrorPage statusCode={404} />
   }
+
   return (
     <Layout>
       <Container>
@@ -51,8 +51,14 @@ export default function Post({ post }: Props) {
   )
 }
 
-export const getStaticProps: GetStaticProps<{ postData: Props }> = async () => {
-  const post = getPostBySlug(postData.post.slug as string, [
+type Params = {
+  params: {
+    slug: string
+  }
+}
+
+export async function getStaticProps({ params }: Params) {
+  const post = getPostBySlug(params.slug, [
     'title',
     'date',
     'slug',
@@ -74,17 +80,17 @@ export const getStaticProps: GetStaticProps<{ postData: Props }> = async () => {
   }
 }
 
-export const getStaticPaths: GetStaticPaths = async () => {
-  const posts = getAllPosts(['slug'])
-
-  const paths = posts.map((post) => ({
-    params: {
-      slug: post.slug,
-    },
-  }))
+export async function getStaticPaths() {
+  const posts: PostType[] = await getAllPosts(['slug'])
 
   return {
-    paths,
+    paths: posts.map((post: PostType) => {
+      return {
+        params: {
+          slug: post.slug,
+        },
+      }
+    }),
     fallback: false,
   }
 }
