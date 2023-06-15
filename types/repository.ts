@@ -1,4 +1,4 @@
-import Owner from '@/interfaces/owner'
+import Owner from './owner'
 
 type Repository = {
   id: number

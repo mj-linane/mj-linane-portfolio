@@ -1,5 +1,5 @@
 import PostPreview from '@/components/PostPreview'
-import type PostType from '@/interfaces/post'
+import type PostType from '../types/post'
 
 type Props = {
   posts: PostType[]

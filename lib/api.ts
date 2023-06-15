@@ -2,7 +2,7 @@ import fs from 'fs'
 import matter from 'gray-matter'
 import { join } from 'path'
 
-import type PostType from '@/interfaces/post'
+import type PostType from '../types/post'
 
 const postsDirectory = join(process.cwd(), '_posts')
 

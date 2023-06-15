@@ -1,6 +1,6 @@
 import axios from 'axios'
 
-import Repository from '@/interfaces/repository'
+import Repository from '../types/repository'
 
 import data from '../constants/data'
 

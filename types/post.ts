@@ -1,4 +1,4 @@
-import Author from '@/interfaces/author'
+import Author from './author'
 
 type PostType = {
   author: Author
