@@ -1,5 +1,4 @@
 import PostPreview from '@/components/PostPreview'
-
 import type PostType from '@/types/post'
 
 type Props = {
