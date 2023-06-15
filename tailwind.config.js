@@ -1,7 +1,6 @@
-// tailwind.config.js
 module.exports = {
     mode: "jit",
-    purge: ['./pages/**/*.{js,ts,jsx,tsx}', './components/**/*.{js,ts,jsx,tsx}'],
+    content: ['./pages/**/*.{js,ts,jsx,tsx}', './components/**/*.{js,ts,jsx,tsx}'],
     darkMode: "class", // or 'media' or 'class'
     theme: {
         extend: {
@@ -11,11 +10,9 @@ module.exports = {
                 4000: "4000ms",
             },
         },
-        fontFamily:{
+        fontFamily: {
             'typewriter': ['"Special Elite"', 'monospace'],
-
         }
-
     },
     variants: {
         extend: {},
@@ -25,5 +22,6 @@ module.exports = {
         require("@tailwindcss/forms")({
             strategy: 'class',
         }),
+        require('@tailwindcss/typography'),
     ],
 };
