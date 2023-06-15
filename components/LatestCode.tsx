@@ -3,7 +3,6 @@ import React, { useEffect, useState } from 'react'
 import LatestCodeCard from '@/components/LatestCodeCard'
 import data from '@/constants/data'
 import GetLatestRepos from '@/lib/GetLatestRepos'
-
 import type Repository from '@/types/repository'
 
 export default function LatestCode() {
