@@ -2,8 +2,9 @@ import React, { useEffect, useState } from 'react'
 
 import LatestCodeCard from '@/components/LatestCodeCard'
 import data from '@/constants/data'
-import Repository from '../types/repository'
 import GetLatestRepos from '@/lib/GetLatestRepos'
+
+import type Repository from '@/types/repository'
 
 export default function LatestCode() {
   const [repos, setRepos] = useState<Repository[] | null>(null)

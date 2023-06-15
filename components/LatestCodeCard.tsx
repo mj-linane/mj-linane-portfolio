@@ -1,4 +1,4 @@
-import type Repository from '../types/repository'
+import type Repository from '@/types/repository'
 
 type Props = {
   latestRepo: Repository

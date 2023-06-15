@@ -2,7 +2,8 @@ import Container from '@/components/Container'
 import HeroPost from '@/components/HeroPost'
 import Intro from '@/components/Intro'
 import MoreStories from '@/components/MoreStories'
-import PostType from '../types/post'
+
+import type PostType from '@/types/post'
 
 type Props = {
   allPosts: PostType[]

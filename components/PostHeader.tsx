@@ -2,7 +2,8 @@ import Avatar from '@/components/Avatar'
 import CoverImage from '@/components/CoverImage'
 import DateFormatter from '@/components/DateFormatter'
 import PostTitle from '@/components/PostTitle'
-import type Author from '../types/author'
+
+import type Author from '@/types/author'
 
 type Props = {
   title: string
