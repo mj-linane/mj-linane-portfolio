@@ -1,7 +1,6 @@
 import Blog from '@/components/Blog'
 import ContainerBlock from '@/components/ContainerBlock'
 import { getAllPosts } from '@/lib/api'
-
 import type PostType from '@/types/post'
 
 type Props = {
