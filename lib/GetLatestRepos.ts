@@ -1,7 +1,6 @@
 import axios from 'axios'
 
 import data from '@/constants/data'
-
 import type Repository from '@/types/repository'
 
 const GetLatestRepos = async (): Promise<Repository[]> => {
