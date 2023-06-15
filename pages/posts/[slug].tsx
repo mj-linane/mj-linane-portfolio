@@ -9,7 +9,6 @@ import PostHeader from '@/components/PostHeader'
 import PostTitle from '@/components/PostTitle'
 import { getPostBySlug, getAllPosts } from '@/lib/api'
 import markdownToHtml from '@/lib/markdownToHtml'
-
 import type PostType from '@/types/post'
 
 type Props = {
@@ -82,10 +81,10 @@ export async function getStaticProps({ params }: Params) {
 }
 
 export async function getStaticPaths() {
-  const posts: PostType[] = await getAllPosts(['slug'])
+  const posts = await getAllPosts(['slug'])
 
   return {
-    paths: posts.map((post: PostType) => {
+    paths: posts.map((post) => {
       return {
         params: {
           slug: post.slug,

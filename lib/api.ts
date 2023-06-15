@@ -14,25 +14,25 @@ export function getPostBySlug(slug: string, fields: string[] = []) {
   const fileContents = fs.readFileSync(fullPath, 'utf8')
   const { data, content } = matter(fileContents)
 
-  type Items = Record<string, string>
+  type FilteredPostData = Record<string, string>
 
-  const items: Items = {}
+  const filteredData: FilteredPostData = {}
 
   // Ensure only the minimal needed data is exposed
   fields.forEach((field) => {
     if (field === 'slug') {
-      items[field] = realSlug
+      filteredData[field] = realSlug
     }
     if (field === 'content') {
-      items[field] = content
+      filteredData[field] = content
     }
 
     if (typeof data[field] !== 'undefined') {
       // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
-      items[field] = data[field]
+      filteredData[field] = data[field]
     }
   })
-  return items
+  return filteredData
 }
 
 export async function getAllPosts(fields: string[] = []) {
