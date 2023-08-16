@@ -8,6 +8,11 @@ const GetLatestRepos = async (): Promise<Repository[]> => {
     `https://api.github.com/users/${data.githubUsername}/repos`
   )
   return response.data
+    .sort(
+      (a, b) =>
+        new Date(b.updated_at).getTime() - new Date(a.updated_at).getTime()
+    )
+    .slice(0, 6)
 }
 
 export default GetLatestRepos
