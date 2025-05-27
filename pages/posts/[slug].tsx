@@ -32,9 +32,7 @@ export default function Post({ post, morePosts, preview }: Props) {
           <article>
             <Head>
               <title>
-                {post.title} | Next.js Blog Example with
-                {' '}
-                {post.title}
+                {post.title} | Next.js Blog Example
               </title>
               <meta property="og:image" content={post.ogImage.url} />
             </Head>
