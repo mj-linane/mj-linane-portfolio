@@ -2,6 +2,7 @@ import Avatar from '@/components/Avatar'
 import CoverImage from '@/components/CoverImage'
 import DateFormatter from '@/components/DateFormatter'
 import PostTitle from '@/components/PostTitle'
+import RainbowHighlight from '@/components/RainbowHighlight'
 import type Author from '@/types/author'
 
 type Props = {
@@ -14,7 +15,9 @@ type Props = {
 function PostHeader({ title, coverImage, date, author }: Props) {
   return (
     <>
-      <PostTitle>{title}</PostTitle>
+      <PostTitle>
+        <RainbowHighlight color={'#a855f7'}>{title}</RainbowHighlight>
+      </PostTitle>
       <div className="hidden md:block md:mb-12">
         <Avatar name={author.name} picture={author.picture} />
       </div>
