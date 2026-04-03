@@ -3,6 +3,7 @@ import Link from 'next/link'
 import Avatar from '@/components/Avatar'
 import CoverImage from '@/components/CoverImage'
 import DateFormatter from '@/components/DateFormatter'
+import RainbowHighlight from '@/components/RainbowHighlight'
 import type Author from '@/types/author'
 
 type Props = {
@@ -32,7 +33,7 @@ const PostPreview = ({
         href="/posts/[slug]"
         className="hover:underline"
       >
-        {title}
+        <RainbowHighlight color={'#a855f7'}>{title}</RainbowHighlight>
       </Link>
     </h3>
     <div className="text-lg mb-4">

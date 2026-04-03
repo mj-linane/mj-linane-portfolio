@@ -2,6 +2,7 @@ import Container from '@/components/Container'
 import HeroPost from '@/components/HeroPost'
 import Intro from '@/components/Intro'
 import MoreStories from '@/components/MoreStories'
+import Footer from '@/components/Footer'
 import type PostType from '@/types/post'
 import RainbowHighlight from '@/components/RainbowHighlight'
 import { RoughNotationGroup } from 'react-rough-notation'
@@ -29,6 +30,7 @@ export default function Blog({ allPosts }: Props) {
         )}
       </RoughNotationGroup>
       {morePosts.length > 0 && <MoreStories posts={morePosts} />}
+      <Footer />
     </Container>
   )
 }

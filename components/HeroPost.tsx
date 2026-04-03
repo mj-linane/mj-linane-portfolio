@@ -3,6 +3,7 @@ import Link from 'next/link'
 import Avatar from '@/components/Avatar'
 import CoverImage from '@/components/CoverImage'
 import DateFormatter from '@/components/DateFormatter'
+import RainbowHighlight from '@/components/RainbowHighlight'
 import type Author from '@/types/author'
 
 type Props = {
@@ -35,7 +36,7 @@ export default function HeroPost({
               href="/posts/[slug]"
               className="hover:underline"
             >
-              {title}
+              <RainbowHighlight color={'#a855f7'}>{title}</RainbowHighlight>
             </Link>
           </h3>
           <div className="mb-4 md:mb-0 text-lg">

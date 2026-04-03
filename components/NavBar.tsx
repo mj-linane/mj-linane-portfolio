@@ -135,6 +135,7 @@ export default function NavBar() {
               )}
             </div>
           </Link>
+// Removed duplicate "Blog" link block to consolidate navigation.
         </div>
 
         {/*social media links*/}
@@ -242,6 +243,11 @@ export default function NavBar() {
         <Link href="/contact">
           <div className="text-base font-normal text-neutral-600 dark:text-neutral-300">
             Contact
+          </div>
+        </Link>
+        <Link href="/blog">
+          <div className="text-base font-normal text-neutral-600 dark:text-neutral-300">
+            Blog
           </div>
         </Link>
       </div>
